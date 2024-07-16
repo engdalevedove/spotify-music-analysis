@@ -1,30 +1,16 @@
 # Spotify Music Analysis
 
-Este projeto analisa as preferências musicais no Spotify por diferentes faixas etárias.
+Este repositório contém um projeto de análise de dados que utiliza a API do Spotify para coletar informações sobre playlists de diferentes gêneros musicais. O objetivo é identificar as músicas mais tocadas e as preferências musicais de diferentes faixas etárias.
 
 ## Descrição
-
-O objetivo deste projeto é analisar os dados de preferências musicais de ouvintes do Spotify e identificar quais gêneros musicais são mais populares entre diferentes faixas etárias.
-
-## Ferramentas Utilizadas
-
-- Python
-- Spotipy (API do Spotify)
-- Pandas
-- Matplotlib
-- Seaborn
-
-## Estrutura do Projeto
-
-- `spotify_music_analysis.py`: Script Python para coleta e análise de dados.
-- `README.md`: Este arquivo, contendo uma descrição detalhada do projeto.
-- `requirements.txt`: Lista de dependências do projeto.
+O projeto visa analisar as preferências musicais no Spotify, categorizando as músicas mais tocadas por diferentes faixas etárias e gêneros musicais. Utilizamos scripts em Python para coletar, processar e visualizar os dados. Os resultados são exportados para arquivos CSV, que podem ser importados e visualizados no Power BI.
 
 ## Como Executar
+Siga os passos abaixo para configurar e executar o projeto:
 
 1. Clone este repositório:
     ```bash
-    git clone https://github.com/seu_usuario/spotify-music-analysis.git
+    git clone https://github.com/engdalevedove/spotify-music-analysis.git
     cd spotify-music-analysis
     ```
 
@@ -39,20 +25,35 @@ O objetivo deste projeto é analisar os dados de preferências musicais de ouvin
     pip install -r requirements.txt
     ```
 
-4. Execute o script:
+4. Crie um arquivo `.env` na raiz do projeto e adicione suas credenciais do Spotify:
+    ```plaintext
+    SPOTIPY_CLIENT_ID=seu_client_id
+    SPOTIPY_CLIENT_SECRET=seu_client_secret
+    ```
+
+5. Execute o script para coletar e processar os dados:
     ```bash
     python spotify_music_analysis.py
     ```
 
-## Resultados
+## Tecnologias Utilizadas
+- **Python**
+- **Spotipy** (API do Spotify)
+- **Pandas**
+- **Matplotlib**
+- **Seaborn**
+- **Power BI**
 
-### Músicas mais tocadas por faixa etária e gênero
-O arquivo `musicas_mais_tocadas_por_faixa_etaria.csv` contém as músicas mais tocadas em cada faixa etária e gênero.
+## Estrutura do Projeto
+- `spotify_music_analysis.py`: Script Python para coleta e análise de dados musicais.
+- `musicas_mais_tocadas_por_faixa_etaria.csv`: Arquivo CSV contendo as músicas mais tocadas por faixa etária e gênero.
+- `preferencias_musicais_por_faixa_etaria.csv`: Arquivo CSV contendo as preferências musicais por faixa etária.
+- `README.md`: Este arquivo, contendo uma descrição detalhada do projeto.
+- `requirements.txt`: Lista de dependências do projeto.
 
-### Preferências musicais por faixa etária
-O arquivo `preferencias_musicais_por_faixa_etaria.csv` contém as preferências musicais por faixa etária em percentual.
+## Exemplos de Uso
 
-## Contribuições
-
-Sinta-se à vontade para contribuir com este projeto. Para isso, faça um fork do repositório e envie suas alterações através de um pull request.
-
+### Exemplo de Comandos
+Para coletar os dados:
+```bash
+python spotify_music_analysis.py
