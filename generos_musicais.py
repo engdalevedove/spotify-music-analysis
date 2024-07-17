@@ -119,10 +119,15 @@ print(df_preferences)
 
 # Plotagem dos dados de preferências musicais
 plt.figure(figsize=(12, 8))
-sns.barplot(x='faixa_etaria', y='value', hue='variable',
-            data=pd.melt(df_preferences, ['faixa_etaria']))
+ax = sns.barplot(x='faixa_etaria', y='value', hue='variable',
+                 data=pd.melt(df_preferences, ['faixa_etaria']))
 plt.title('Preferências Musicais por Faixa Etária')
 plt.xlabel('Faixa Etária')
 plt.ylabel('Percentual')
 plt.legend(title='Gênero')
+
+# Adiciona a porcentagem em cada barra
+for container in ax.containers:
+    ax.bar_label(container, fmt='%.1f%%', label_type='edge')
+
 plt.show()
