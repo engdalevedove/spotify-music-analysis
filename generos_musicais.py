@@ -16,18 +16,24 @@ client_secret = os.getenv('SPOTIPY_CLIENT_SECRET')
 
 # Verificação se as variáveis de ambiente estão definidas
 if not client_id or not client_secret:
-    raise ValueError("As variáveis de ambiente SPOTIPY_CLIENT_ID e SPOTIPY_CLIENT_SECRET devem ser definidas")
+    raise ValueError(
+        "As variáveis de ambiente SPOTIPY_CLIENT_ID e SPOTIPY_CLIENT_SECRET devem ser definidas")
 
 # Autenticação
-client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
+client_credentials_manager = SpotifyClientCredentials(
+    client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 # Função para obter playlists de um determinado gênero
+
+
 def get_genre_playlists(genre):
     results = sp.search(q=f'genre:{genre}', type='playlist', limit=10)
     return results['playlists']['items']
 
 # Função para obter dados das faixas de uma playlist
+
+
 def get_playlist_tracks(playlist_id):
     results = sp.playlist_tracks(playlist_id)
     tracks = results['items']
@@ -36,8 +42,10 @@ def get_playlist_tracks(playlist_id):
         tracks.extend(results['items'])
     return tracks
 
+
 # Gêneros de interesse
-genres = ['sertanejo', 'sertanejo universitario', 'pagode', 'funk', 'pop', 'rock', 'jazz']
+genres = ['sertanejo', 'sertanejo universitario',
+          'pagode', 'funk', 'pop', 'rock', 'jazz']
 
 # Coleta de dados
 genre_tracks = {}
@@ -93,12 +101,14 @@ preferences_demographics = {
 
 # Criação do DataFrame para preferências musicais
 data_preferences = {'faixa_etaria': age_groups}
-data_preferences.update({genre: [preferences_demographics[age][genre] for age in age_groups] for genre in genres})
+data_preferences.update({genre: [preferences_demographics[age][genre]
+                        for age in age_groups] for genre in genres})
 
 df_preferences = pd.DataFrame(data_preferences)
 
 # Exportar para CSV
-df_preferences.to_csv('preferencias_musicais_por_faixa_etaria.csv', index=False)
+df_preferences.to_csv(
+    'preferencias_musicais_por_faixa_etaria.csv', index=False)
 
 # Exibição dos DataFrames
 print("Músicas mais tocadas por faixa etária e gênero:")
@@ -109,7 +119,8 @@ print(df_preferences)
 
 # Plotagem dos dados de preferências musicais
 plt.figure(figsize=(12, 8))
-sns.barplot(x='faixa_etaria', y='value', hue='variable', data=pd.melt(df_preferences, ['faixa_etaria']))
+sns.barplot(x='faixa_etaria', y='value', hue='variable',
+            data=pd.melt(df_preferences, ['faixa_etaria']))
 plt.title('Preferências Musicais por Faixa Etária')
 plt.xlabel('Faixa Etária')
 plt.ylabel('Percentual')
