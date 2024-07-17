@@ -69,10 +69,10 @@ preferences = {
 top_tracks = {age: {genre: None for genre in genres} for age in age_groups}
 
 for genre, tracks in genre_tracks.items():
+    valid_tracks = [track for track in tracks if track['track'] is not None]
     for age_group in age_groups:
-        # Aqui, você precisará de dados reais para associar a faixa etária aos ouvintes.
-        # Neste exemplo, vamos contar as ocorrências de cada música.
-        track_counter = Counter([track['track']['name'] for track in tracks])
+        track_counter = Counter([track['track']['name']
+                                for track in valid_tracks])
         if track_counter:
             most_common_track = track_counter.most_common(1)[0][0]
             top_tracks[age_group][genre] = most_common_track
