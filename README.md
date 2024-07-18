@@ -45,8 +45,7 @@ Siga os passos abaixo para configurar e executar o projeto:
 - **Power BI**
 
 ## Estrutura do Projeto
-- `spotify_music_analysis.py`: Script Python para coleta e análise de dados musicais.
-- `spotify_analysis_combined.csv`: Arquivo CSV contendo as informações combinadas de músicas mais tocadas e preferências musicais.
+- `spotify_data_collection.py`: Script Python para coleta e análise de dados musicais.
 - `visualization_examples.py`: Script Python para exemplos de visualização dos dados.
 - `README.md`: Este arquivo, contendo uma descrição detalhada do projeto.
 - `requirements.txt`: Lista de dependências do projeto.
