@@ -46,10 +46,11 @@ Siga os passos abaixo para configurar e executar o projeto:
 
 ## Estrutura do Projeto
 - `spotify_music_analysis.py`: Script Python para coleta e análise de dados musicais.
-- `musicas_mais_tocadas_por_faixa_etaria.csv`: Arquivo CSV contendo as músicas mais tocadas por faixa etária e gênero.
-- `preferencias_musicais_por_faixa_etaria.csv`: Arquivo CSV contendo as preferências musicais por faixa etária.
+- `spotify_analysis_combined.csv`: Arquivo CSV contendo as informações combinadas de músicas mais tocadas e preferências musicais.
+- `visualization_examples.py`: Script Python para exemplos de visualização dos dados.
 - `README.md`: Este arquivo, contendo uma descrição detalhada do projeto.
 - `requirements.txt`: Lista de dependências do projeto.
+- `LICENSE`: Arquivo de licença do projeto.
 
 ## Exemplos de Uso
 
@@ -57,3 +58,5 @@ Siga os passos abaixo para configurar e executar o projeto:
 Para coletar os dados:
 ```bash
 python spotify_music_analysis.py
+
+
