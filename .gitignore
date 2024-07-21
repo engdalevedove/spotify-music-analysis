@@ -58,3 +58,5 @@ copy_files.sh
 .env
 __pycache__/
 *.pyc
+.cache
+.csv
