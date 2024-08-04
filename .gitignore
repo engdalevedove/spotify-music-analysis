@@ -59,4 +59,4 @@ copy_files.sh
 __pycache__/
 *.pyc
 .cache
-.csv
+*.csv
